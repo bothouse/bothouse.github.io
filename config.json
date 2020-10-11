@@ -1,0 +1,32 @@
+{
+"mongo_url":"mongodb+srv://bot3:Lin1bot3@cluster0.advkh.mongodb.net/Cluster0?retryWrites=true&w=majority",
+    "server": {
+        "id": "731647189079556097",
+        "invite": "https://discord.gg/7XZ4VhM",
+        "mod_log_id": "746810524758573136",
+        "admin_user_ids": "476784886779478021",
+        "role_ids": {
+            "bot": "746812727246454835",
+            "unverified": "735251837602496620",
+            "verified": "731650222077509697",
+            "unmuted": "744157214427840552",
+
+            "bot_developer": "746820188804087849",
+            "bot_verifier": "745654164993867836"  
+        }
+    },
+    "bot_options": {
+        "max_owners_count": 4
+    },
+    "discord_client": {
+        "id": "763064513255440394",
+        "secret": "Oj6plJfw8fiRZrIPmV2c4cXTUawuG1f0",
+        "token": "NzYzMDY0NTEzMjU1NDQwMzk0.X3yRNQ.ZdZ3UTW5Au8qrTeYpuErBmDl-Y0",
+        "prefix": "w!!"
+    },
+    "web": {
+        "domain_with_protocol": "https://bothouse-test.glitch.me/",
+        "port": 1974,
+        "ratelimit": 30
+    }
+}
