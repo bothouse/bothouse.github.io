@@ -1,0 +1,30 @@
+doctype html
+include includes/head.pug
+body
+    include includes/nav.pug
+    #content
+        span.header
+            .de Search
+            .tex
+                span.strikethrough Search Our Bots
+        br
+        .input-holder
+            input#searchbar.input(type='text' placeholder=' ')
+            .placeholder Search Bots
+        #cards
+            if (cards.length == 0)
+                p No bots found. Try searching for something else.
+            else
+                each card in cards
+                    div.card
+                        img.icon(src=card.logo)
+                        h2.title #{card.username}
+                        p.desc #{card.description}
+                        a.small.button(href=`/bots/${card.botid}`) View bot info
+    script.
+        const node = document.getElementById("searchbar");
+        node.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+        location.href = `/bots/search/?q=${node.value}`
+        }
+        });

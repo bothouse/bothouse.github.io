@@ -1,0 +1,42 @@
+#navTop
+    span.navtag.keep
+        a(href='/')
+        img(src="https://imgur.com/yQoLCUP" length='40' width='40')
+
+        a(href="/")
+            span.navtext.keep  BotHouse.gq
+            include arrow.pug
+
+
+        a(href="/bots/search/")
+            span.navtext.keep  Search Bots
+            include arrow.pug
+
+
+        if (isBotInfoPage) 
+            a(href="#")
+                span.navtext #{bot.username}
+            include arrow.pug
+            a(href=`/api/embed/${bot.botid}` target="_blank")
+                span.navtext Embed
+        if (isProfile)
+            a(href=`/user/${userProfile.id}`)
+                span.navtext #{userProfile.username}
+    a#searcher.navtag.search(href='/bots/search/')
+        #search.navtext 
+          
+    span.dropdown
+    
+        if (user)
+            a#login.navtag.keep(href='/login') #{user.username}##{user.discriminator}
+            span.dd-content
+                a(href='/me' target='_blank') Profile
+                br
+                a(href='/join' target='_blank') Join Server
+                br
+                a(href='/add') Add bot
+                br
+                a(href='/logout') Logout
+        else
+        
+            a#login.navtag.keep(href='/login') Login

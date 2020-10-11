@@ -1,0 +1,38 @@
+doctype html
+include includes/head.pug
+script(src='/assets/js/form.js')
+body
+    include includes/nav.pug
+    #content
+        span.header
+            .de Add your bot
+            .tex Fill in these details and hit that button. Make sure you&apos;re in the server.
+        br
+        form.center
+            .input-holder
+                input#botid.input(type='text' placeholder=' ')
+                .placeholder Client ID
+            br
+            .input-holder
+                input#prefix.input(type='text' placeholder=' ')
+                .placeholder Prefix
+            br
+            .input-holder
+                input#description.input(maxlength='120' type='text' placeholder=' ')
+                .placeholder Short Description
+            br
+            .input-holder
+                input#invite.input(type='text' placeholder=' ')
+                .placeholder Invite Link
+            br
+            .input-holder
+                textarea#longdesc.input(rows='7')
+                .textarea-placeholder Long Description
+            br
+            .input-holder
+                input#owners.input.xinput(type='text' placeholder=' ')
+                .placeholder Additional Owner IDs
+            br
+            a.button(onclick='submit()') Submit
+            br
+        br

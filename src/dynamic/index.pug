@@ -1,0 +1,17 @@
+doctype html
+include includes/head.pug
+body(onload="load()")
+    include includes/nav.pug
+    #content
+        span.header
+            .de bothouse.gq
+            .tex The home of discord bots!
+            br
+            center
+              a.bot-btns.button(target='_blank' href='/bots/search/')
+                  | Search All Bots
+
+        #searchMore
+            | Would you like to 
+        #cards
+            span#loading Loading...

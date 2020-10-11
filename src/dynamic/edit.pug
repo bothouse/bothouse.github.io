@@ -1,0 +1,45 @@
+doctype html
+include includes/head.pug
+script(src='/assets/js/form.js')
+body(onload="load()")
+    include includes/nav.pug
+    #content
+      span.header
+        h1 Edit 
+        p You can edit your bot or find your bot auth details below.
+      br
+      form.center
+        .input-holder
+          input#botid.input(type='text' placeholder=' ' value=bot.botid readonly='')
+          .placeholder Client ID
+        br
+        .input-holder
+          input#prefix.input(type='text' placeholder=' ' value=bot.prefix)
+          .placeholder Prefix
+        br
+        .input-holder
+          input#description.input(maxlength='120' type='text' placeholder=' ' value=bot.description)
+          .placeholder Short Description
+        br
+        .input-holder
+          input#invite.input(type='text' placeholder=' ' value=bot.invite)
+          .placeholder Invite Link
+        br
+        .input-holder
+          textarea#longdesc.input(rows='7') #{bot.long}
+          .textarea-placeholder Long Description
+        br
+        .input-holder
+          if (bot.owners[0] == user.id)
+            input#owners.input.xinput(type='text' placeholder=' ' value=String(bot.owners.slice(1).join(" ")))
+            .placeholder Additional Owner IDs
+          else
+            input#owners.input.xinput(type='text' placeholder=' ' value=String(bot.owners.slice(1).join(" ")) disabled)
+            .placeholder Only the primary owner can edit additional owners
+        br
+        a.button(onclick='submit()') Submit
+        br
+      hr
+      span.center
+        a#auth(style='margin-right: 10px;') Authorization token
+        a#reset Reset Authorization token
